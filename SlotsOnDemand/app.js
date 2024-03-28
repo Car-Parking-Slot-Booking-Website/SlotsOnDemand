@@ -12,7 +12,7 @@ const cors = require('cors');
 const SP=require('./model/SP');
 const slots = require('./model/Slot');
 const stripe = require('stripe')('sk_test_...'); // Replace with your Stripe secret key
-
+const seed = require('./seed');
 let spID;
 let currentSP;
 
@@ -64,7 +64,7 @@ const startMongoDB = async () => {
 };
 
 startMongoDB();
-
+seed.seedLocation();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));

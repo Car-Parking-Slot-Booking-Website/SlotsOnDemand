@@ -31,9 +31,9 @@ async function seedCity(){
 }
 
 async function seedLocation(){
-    await Location.insertMany(cities);
+    await Location.insertMany(locations);
     console.log("Location Data seeded");
 }
 
 
-module.exports = seedCity;
+module.exports = {seedCity,seedLocation};
