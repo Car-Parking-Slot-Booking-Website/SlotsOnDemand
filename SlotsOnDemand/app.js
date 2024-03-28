@@ -56,10 +56,7 @@ mongoose.connection.once('open', () => {
 
 const startMongoDB = async () => {
     try {
-        await mongoose.connect('mongodb://127.0.0.1:27017/Parking', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect('mongodb+srv://kush:kushparking@parking.rlrwlky.mongodb.net/?retryWrites=true&w=majority&appName=parking');
         console.log('DB CONNECTED');
     } catch (error) {
         console.error('Error while connecting DB', error);
