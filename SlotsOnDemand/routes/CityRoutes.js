@@ -89,7 +89,7 @@ router.get('/admin/cities', async (req, res) => {
 router.get('/admin/cities/:id', async (req, res) => {
     let { id } = req.params;
     let foundCity = await City.findById(id).populate('locations'); 
-    // console.log(foundCity);
+    console.log(foundCity);
     req.session.CityId = foundCity._id;
     res.render('cities/show', { foundCity });
 })
